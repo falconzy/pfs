@@ -31,6 +31,7 @@ namespace pfs
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PfsDbContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            
             // Add framework services.
             services.AddMvc();
         }
