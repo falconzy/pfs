@@ -21,9 +21,6 @@ namespace pfs.Core.model
         public decimal BuyValue { get; set; }
         public decimal CurrentValue { get; set; }
         [Required]
-        [StringLength(10)]
-        public string Currency { get; set; }
-        [Required]
         public DateTime PurchaseDate { get; set; }
         [Required]
         public DateTime LastModifiedDate { get; set; }

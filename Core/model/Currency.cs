@@ -3,22 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace pfs.Core.model
 {
-    public class AccountHistory
+    public class Currency
     {
         public int Id { get; set; }
         [Required]
         [StringLength(10)]
-        public string  AccountName { get; set; }
+        public string  CurrencyName { get; set; }
         [Required]
         [StringLength(255)]
         public string  Description { get; set; }
         [Required]
-        public decimal Amount { get; set; }
+        public DateTime LastUpdateDate { get; set; }
         [Required]
-        public int CurrencyFK { get; set; }
-        [Required]
-        public DateTime UpdateDate { get; set; }
-        [Required]
-        public DateTime ModifiedBy { get; set; }
+        public DateTime LastModifiedBy { get; set; }
     }
 }
