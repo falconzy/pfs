@@ -12,6 +12,7 @@ export class StockComponent implements OnInit {
     currencies=['SGD','USD','RMB'];
     actions=['BUY','SELL'];
     stockForm: FormGroup;
+    stock : any = {};
     constructor(private http:Http) {
       
     }

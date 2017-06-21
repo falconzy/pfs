@@ -10,6 +10,12 @@ namespace pfs.Persistence
         
       }
       public DbSet<Stock> Stock { get; set; }
+      public DbSet<AccountHistory> AccountHistory { get; set; }
+      
+      
+        
+      }
+      
     }
 
    

@@ -1,6 +1,6 @@
 <h1>Add New Stock</h1>
 <hr>
-<form [formGroup]="stockForm" (ngSubmit)="onSumbit()">
+<form novalidate  [formGroup]="stockForm" (ngSubmit)="onSumbit()">
   <div class="form-group">
     <label for="stockCode">Stock Code</label>
     <input type="text" class="form-control" id="stockCode" formControlName="stockCode" placeholder="Enter stock code">
