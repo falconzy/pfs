@@ -9,6 +9,12 @@ namespace pfs.Persistence
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            
+           
+        }
         public DbSet<Stock> Stock { get; set; }
         public DbSet<AccountHistory> AccountHistory { get; set; }
         public DbSet<Currency> Currency { get; set; }

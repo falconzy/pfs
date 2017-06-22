@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace pfs.Core.model
 {
@@ -8,10 +9,14 @@ namespace pfs.Core.model
         public int Id { get; set; }
         [Required]
         [StringLength(10)]
-        public int  LocalCurrencyFK { get; set; }
+        [ForeignKeyAttribute("LocalCurrency"), Column(Order = 0)]
+        public int  LocalCurrencyId { get; set; }
         [Required]
         [StringLength(10)]
-        public int  foreignCurrencyFK { get; set; }
+        [ForeignKeyAttribute("ForeignCurrency"), Column(Order = 1)]
+        public int  ForeignCurrencyId { get; set; }
+        public virtual Currency LocalCurrency { get; set; } 
+        public virtual Currency ForeignCurrency { get; set; } 
         [Required]
         public decimal Rate { get; set; }
         [Required]

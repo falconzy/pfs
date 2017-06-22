@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170622023604_table adjustment for ForeignKey")]
+    partial class tableadjustmentforForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170622015851_table adjustment")]
+    partial class tableadjustment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -27,7 +28,9 @@ namespace pfs.Migrations
 
                     b.Property<decimal>("Amount");
 
-                    b.Property<int>("CurrencyId");
+                    b.Property<int>("CurrencyFK");
+
+                    b.Property<int?>("CurrencyId");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -71,23 +74,23 @@ namespace pfs.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ForeignCurrencyId")
-                        .HasMaxLength(10);
+                    b.Property<int?>("CurrencyId");
 
                     b.Property<DateTime>("LastModifiedBy");
 
                     b.Property<DateTime>("LastUpdateDate");
 
-                    b.Property<int>("LocalCurrencyId")
+                    b.Property<int>("LocalCurrencyFK")
                         .HasMaxLength(10);
 
                     b.Property<decimal>("Rate");
 
+                    b.Property<int>("foreignCurrencyFK")
+                        .HasMaxLength(10);
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ForeignCurrencyId");
-
-                    b.HasIndex("LocalCurrencyId");
+                    b.HasIndex("CurrencyId");
 
                     b.ToTable("ExchangeRate");
                 });
@@ -130,21 +133,14 @@ namespace pfs.Migrations
                 {
                     b.HasOne("pfs.Core.model.Currency", "Currency")
                         .WithMany()
-                        .HasForeignKey("CurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CurrencyId");
                 });
 
             modelBuilder.Entity("pfs.Core.model.ExchangeRate", b =>
                 {
-                    b.HasOne("pfs.Core.model.Currency", "ForeignCurrency")
+                    b.HasOne("pfs.Core.model.Currency", "Currency")
                         .WithMany()
-                        .HasForeignKey("ForeignCurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("pfs.Core.model.Currency", "LocalCurrency")
-                        .WithMany()
-                        .HasForeignKey("LocalCurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CurrencyId");
                 });
         }
     }

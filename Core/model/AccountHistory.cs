@@ -15,7 +15,8 @@ namespace pfs.Core.model
         [Required]
         public decimal Amount { get; set; }
         [Required]
-        public int CurrencyFK { get; set; }
+        public int CurrencyId { get; set; }
+        public virtual Currency Currency { get; set; } 
         [Required]
         public DateTime UpdateDate { get; set; }
         [Required]
