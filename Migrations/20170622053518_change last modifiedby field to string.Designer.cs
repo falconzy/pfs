@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170622053518_change last modifiedby field to string")]
+    partial class changelastmodifiedbyfieldtostring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -88,11 +89,7 @@ namespace pfs.Migrations
                     b.Property<int>("LocalCurrencyId")
                         .HasMaxLength(10);
 
-                    b.Property<int>("Month");
-
                     b.Property<decimal>("Rate");
-
-                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 

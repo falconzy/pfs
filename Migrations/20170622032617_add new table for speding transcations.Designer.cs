@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170622032617_add new table for speding transcations")]
+    partial class addnewtableforspedingtranscations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -33,8 +34,7 @@ namespace pfs.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("ModifiedBy");
 
                     b.Property<int>("Month");
 
@@ -62,8 +62,7 @@ namespace pfs.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("LastModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("LastModifiedBy");
 
                     b.Property<DateTime>("LastUpdateDate");
 
@@ -80,19 +79,14 @@ namespace pfs.Migrations
                     b.Property<int>("ForeignCurrencyId")
                         .HasMaxLength(10);
 
-                    b.Property<string>("LastModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("LastModifiedBy");
 
                     b.Property<DateTime>("LastUpdateDate");
 
                     b.Property<int>("LocalCurrencyId")
                         .HasMaxLength(10);
 
-                    b.Property<int>("Month");
-
                     b.Property<decimal>("Rate");
-
-                    b.Property<int>("Year");
 
                     b.HasKey("Id");
 
@@ -116,8 +110,7 @@ namespace pfs.Migrations
 
                     b.Property<decimal>("LongTermFixAmount");
 
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("ModifiedBy");
 
                     b.Property<int>("Month");
 
@@ -139,8 +132,7 @@ namespace pfs.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("ModifiedBy");
 
                     b.Property<int>("Month");
 
@@ -188,8 +180,7 @@ namespace pfs.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("LastModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("LastModifiedBy");
 
                     b.Property<DateTime>("LastModifiedDate");
 
@@ -215,8 +206,7 @@ namespace pfs.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired();
+                    b.Property<DateTime>("ModifiedBy");
 
                     b.Property<int>("Month");
 

@@ -16,6 +16,6 @@ namespace pfs.Core.model
         [Required]
         public DateTime LastUpdateDate { get; set; }
         [Required]
-        public DateTime LastModifiedBy { get; set; }
+        public string LastModifiedBy { get; set; }
     }
 }

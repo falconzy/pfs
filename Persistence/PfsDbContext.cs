@@ -19,6 +19,12 @@ namespace pfs.Persistence
         public DbSet<AccountHistory> AccountHistory { get; set; }
         public DbSet<Currency> Currency { get; set; }
         public DbSet<ExchangeRate> ExchangeRate { get; set; }
+        public DbSet<MonthlySummary> MonthlySummary { get; set; }
+        public DbSet<Spending> Spending { get; set; }
+        public DbSet<SpendingType> SpendingType { get; set; }
+        public DbSet<Transactions> Transactions { get; set; }
+        public DbSet<TransactionType> TransactionType { get; set; }
+
 
     }
 
