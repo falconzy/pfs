@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using pfs.Persistence;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace pfs
 {
@@ -34,6 +35,7 @@ namespace pfs
             
             // Add framework services.
             services.AddMvc();
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

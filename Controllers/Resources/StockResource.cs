@@ -16,8 +16,6 @@ namespace pfs.Controllers.Resources
         [Required]
         public string Acion { get; set; } //(1-BUY|2-SELL|3-UPDATE)
         [Required]
-        public ICollection<ActionResouce> Acions{ get; set; } //(BUY|SELL|UPDATE)
-        [Required]
         public decimal Price { get; set; }
         [Required]
         public int Lots { get; set; }
