@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170624045341_stock transcation table")]
+    partial class stocktranscationtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

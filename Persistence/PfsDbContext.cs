@@ -16,6 +16,7 @@ namespace pfs.Persistence
            
         }
         public DbSet<Stock> Stock { get; set; }
+         public DbSet<StockTranscations> StockTranscations { get; set; }
         public DbSet<AccountHistory> AccountHistory { get; set; }
         public DbSet<Currency> Currency { get; set; }
         public DbSet<ExchangeRate> ExchangeRate { get; set; }
