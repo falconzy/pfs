@@ -30,7 +30,7 @@ namespace pfs.Controllers
 
             if(stockResouce.Acion=="BUY")
             {
-
+                
             }
             if(stockResouce.Acion=="SELL")
             {

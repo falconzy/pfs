@@ -12,11 +12,13 @@ namespace pfs.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-           
+            modelBuilder.Entity<Stock>()
+           .HasIndex(u => u.StockCode)
+           .IsUnique();
+
         }
         public DbSet<Stock> Stock { get; set; }
-         public DbSet<StockTranscations> StockTranscations { get; set; }
+        public DbSet<StockTranscations> StockTranscations { get; set; }
         public DbSet<AccountHistory> AccountHistory { get; set; }
         public DbSet<Currency> Currency { get; set; }
         public DbSet<ExchangeRate> ExchangeRate { get; set; }

@@ -8,9 +8,10 @@ using pfs.Persistence;
 namespace pfs.Migrations
 {
     [DbContext(typeof(PfsDbContext))]
-    partial class PfsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170630053757_change stockcode to unique")]
+    partial class changestockcodetounique
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
